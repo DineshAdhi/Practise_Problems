@@ -1,0 +1,10 @@
+import facebook
+import requests
+import json
+import webbrowser
+
+TOKEN='EAACEdEose0cBAHK5qfwZCHnSsBPBgXzMYMxerqFuIR3fF6mdVjEKqJPm77ohChbu9zzKe0G8Q2SLWHtcT7sK3He6XG4Pek2hBZBoHdjHXOxOMVPXzbrlsHgBX0ZCx7ZA6QzYoWuNyrNfEDMAwqC5x9OdFUZAxzcWcyFneCYBW9ZBnD6FRpuSkY'
+parameters={'access_token': TOKEN }
+api=facebook.GraphAPI(TOKEN)
+conversations=api.get_object("me/conversations")
+print conversations

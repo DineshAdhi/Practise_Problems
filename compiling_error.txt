@@ -1,0 +1,5 @@
+/Users/dineshadhithya/Desktop/Projects/superdivisor.cpp:22:21: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+  for(int i=0;i<arr.size;i++)
+                ~~~~^~~~
+                        ()
+1 error generated.
