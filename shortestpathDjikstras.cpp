@@ -63,21 +63,22 @@ public:
   {
     queue<int> a; int visited[size], shortest[size];
 
-    for(i=0;i<size;i++)
+    for(i=0;i<=size;i++)
     { visited[i]=0; shortest[i]=0; }
 
-    a.push(1); visited[1]=1;
+    a.push(1);
 
     while(!a.empty())
     {
-      for(i=0;i<size;i++)
+      visited[a.front()]=1;
+      for(i=1;i<=size;i++)
       {
-        if(matrix[a.front()]!=0 && visited[i]==0)
+        if(matrix[a.front()][i]!=0 && visited[i]==0)
         {
-          visited[i]=1; a.push(i);
-
           if(shortest[i]==0 || shortest[i] > shortest[a.front()]+matrix[a.front()][i])
             shortest[i]= shortest[a.front()]+matrix[a.front()][i];
+
+          a.push(i);
         }
       }
 
@@ -94,6 +95,6 @@ int main()
   graph g(4);
   g.insert(1,2,4);
   g.insert(2,3,6);
-  g.insert(1,3,2);
+  g.insert(1,3,200);
   g.findShortestPath();
 }

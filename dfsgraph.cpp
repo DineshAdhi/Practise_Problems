@@ -185,20 +185,8 @@ void dfs(){
 int main()
 {
   graph g(8);
-  g.addEdge(1,2,6);
-  g.addEdge(1,3,2);
-  g.addEdge(2,6,6);
-  g.addEdge(6,4,6);
-  g.addEdge(4,3,2);
-  g.addEdge(3,6,6);
-  g.addEdge(6,1,6);
-  g.addEdge(4,5,6);
-  g.addEdge(6,7,22);
-  g.addEdge(1,7,4);
-  g.addEdge(7,8,1);
-  int a;
-  cout<<"Enter the current node : ";
-  cin>>a;
-  cout<<"\nThe shortest path from the node " << a <<" is listed below \n";
-  g.findShortestPath(a);
+  g.addEdge(1,2,4);
+  g.addEdge(2,3,6);
+  g.addEdge(1,3,200);
+  g.findShortestPath(1);
 }
