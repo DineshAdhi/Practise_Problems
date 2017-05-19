@@ -8,6 +8,7 @@ int knapsack(int *w, int *val, int W, int n)
 
   if(w[n-1]>W)
     return knapsack(w, val, W, n-1);
+    
   else
     return max(val[n-1]+knapsack(w,val,W-w[n-1],n-1), knapsack(w,val,W,n-1));
 }

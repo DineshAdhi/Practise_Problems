@@ -8,6 +8,12 @@ class trienode
 public:
   char a;
   trienode *nodes[ALPHABET_NUM];
+  bool leaf;
+
+  trienode()
+  {
+    leaf = false;
+  }
 };
 
 class trie
@@ -30,6 +36,8 @@ public:
       }
       temp = temp->nodes[s[i]-'a'];
     }
+
+    temp->leaf = true;
   }
 
   void search(string s)
@@ -40,14 +48,19 @@ public:
     {
       if(temp->nodes[s[i]-'a']==NULL)
       {
-
         cout<<"Cant find "<<s[i]<<"  Not found\n"; return;
       }
 
       temp = temp->nodes[s[i]-'a'];
     }
 
-    cout<<"Found\n";
+    if(temp->leaf == true)
+    {
+          cout<<"Found\n";
+          return;
+    }
+
+    cout<<"Not found\n";
     return;
   }
 };
@@ -56,8 +69,5 @@ int main()
 {
   trie t;
   t.insert("dinesh");
-  t.search("dinesh");
-  t.insert("balle");
-  t.search("dinesh");
-  t.search("balleh");
+  t.search("dines");
 }

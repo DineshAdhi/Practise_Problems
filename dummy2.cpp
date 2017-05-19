@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+int cnt=0;
 void swap(char *a, char *b)
 {
   char t = *a;
@@ -11,7 +11,7 @@ void swap(char *a, char *b)
 void permute(string s, int l, int r)
 {
     if(l==r)
-      cout<<s<<"\n";
+      cout<<s<<" "<<++cnt<<"\n";
     else
     {
       for(int i=l; i<=r; i++)

@@ -73,6 +73,6 @@ int main()
   }
   for(i=0;i<9;i++)
   {
-    q.superPop(); q.print(); cout<<"\n";
+    q.pop(); q.print(); cout<<"\n";
   }
 }
